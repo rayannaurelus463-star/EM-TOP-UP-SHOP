@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EM TOP UP SHOP - Recharge Free Fire & eFootball</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; text-align: center; }
+    h1 { color: #1a73e8; }
+    .card { background: white; max-width: 400px; margin: 20px auto; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    label { display: block; margin: 10px 0 5px; text-align: left; font-weight: bold; }
+    input, select, button { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+    button { background-color: #25D366; color: white; font-weight: bold; border: none; cursor: pointer; font-size: 16px; }
+    button:hover { background-color: #1eb854; }
+  </style>
+</head>
+<body>
+
+  <h1>EM TOP UP SHOP</h1>
+  <p>Achetez vos recharges de jeux rapidement via Moncash & Natcash !</p>
+
+  <div class="card">
+    <h2>Recharge Free Fire</h2>
+    
+    <label for="player-id">ID du Joueur (Player ID) :</label>
+    <input type="text" id="player-id" placeholder="Ex: 123456789" required>
+
+    <label for="package">Choisissez l'offre :</label>
+    <select id="package">
+      <option value="100 Diamants">100 Diamants</option>
+      <option value="530 Diamants">530 Diamants</option>
+      <option value="1080 Diamants">1080 Diamants</option>
+    </select>
+
+    <label for="payment">Moyen de paiement :</label>
+    <select id="payment">
+      <option value="Moncash">Moncash</option>
+      <option value="Natcash">Natcash</option>
+    </select>
+
+    <button onclick="passerCommande()">Commander via WhatsApp</button>
+  </div>
+
+  <script>
+    function passerCommande() {
+      const id = document.getElementById('player-id').value;
+      const offre = document.getElementById('package').value;
+      const paiement = document.getElementById('payment').value;
+
+      if (!id) {
+        alert('Veuillez entrer votre Player ID');
+        return;
+      }
+
+      // Remplacez le numéro ci-dessous par votre numéro WhatsApp (ex: 50912345678)
+      const monNumero = "50900000000"; 
+      const message = `Bonjour EM TOP UP SHOP, je souhaite commander :\n- Produit : ${offre}\n- Player ID : ${id}\n- Mode de paiement : ${paiement}`;
+
+      window.open(`https://wa.me/${monNumero}?text=${encodeURIComponent(message)}`);
+    }
+  </script>
+
+</body>
+</html>
